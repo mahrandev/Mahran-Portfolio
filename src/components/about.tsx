@@ -39,16 +39,16 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6"
+          className="grid grid-cols-1 gap-6"
         >
           {/* Top Row */}
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
             {/* Main Bio Card */}
             <motion.div
               variants={slideInLeft}
-              className="glass-card p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start"
+              className="glass-card p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start"
             >
-              <div className="w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] rounded-xl overflow-hidden flex-shrink-0 border border-[rgba(6,182,212,0.2)]">
+              <div className="w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] rounded-xl overflow-hidden flex-shrink-0 border border-[rgba(6,182,212,0.2)] mx-auto sm:mx-0">
                 <Image
                   src="/images/about-portrait.webp"
                   alt={personalInfo.name}
@@ -57,7 +57,7 @@ export default function About() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div>
+              <div className="text-center sm:text-left">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                   I&apos;m {personalInfo.name}
                 </h3>
@@ -125,7 +125,7 @@ export default function About() {
           </div>
 
           {/* Bottom Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:col-span-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Design Philosophy Card */}
             <motion.div
               variants={fadeUp}

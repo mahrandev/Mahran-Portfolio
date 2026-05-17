@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
     >
       {/* Background glow */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -37,16 +37,16 @@ export default function Hero() {
       </div>
 
       <div className="section-container relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-8 items-center">
           {/* Left Content */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-1 text-center lg:text-left"
           >
             {/* Available badge */}
-            <motion.div variants={fadeUp} className="mb-6">
+            <motion.div variants={fadeUp} className="mb-6 flex justify-center lg:justify-start">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(8,145,178,0.3)] bg-[rgba(8,145,178,0.08)] text-sm">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                 <span className="text-[#67e8f9]">Available for Freelance Work</span>
@@ -76,13 +76,13 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={fadeUp}
-              className="text-[#9ca3af] text-base md:text-lg leading-relaxed max-w-lg mb-8"
+              className="text-[#9ca3af] text-base md:text-lg leading-relaxed max-w-lg mb-8 mx-auto lg:mx-0"
             >
               {personalInfo.heroDescription}
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-10">
+            <motion.div variants={fadeUp} className="flex flex-wrap gap-4 mb-10 justify-center lg:justify-start">
               <a href="#projects" className="btn-primary">
                 View My Work
               </a>
@@ -94,7 +94,7 @@ export default function Hero() {
             {/* Tech Stack */}
             <motion.div variants={fadeUp}>
               <p className="text-[#6b7280] text-sm mb-3">Tech I work with:</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                 {heroTechStack.map((tech) => (
                   <span key={tech.name} className="tech-badge">
                     {techIcons[tech.icon]}
@@ -111,14 +111,14 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="order-1 lg:order-2 relative flex justify-center lg:justify-end"
+            className="order-1 lg:order-2 relative flex justify-center px-8 md:px-6 lg:px-0"
           >
             <div className="relative">
               {/* Purple glow behind image */}
               <div className="absolute -inset-4 bg-gradient-to-br from-[rgba(8,145,178,0.2)] via-[rgba(8,145,178,0.1)] to-transparent rounded-2xl blur-2xl" />
 
               {/* Portrait image */}
-              <div className="relative w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] md:w-[380px] md:h-[460px] rounded-2xl overflow-hidden border border-[rgba(6,182,212,0.15)]">
+              <div className="relative w-[200px] h-[240px] sm:w-[260px] sm:h-[320px] md:w-[300px] md:h-[370px] lg:w-[380px] lg:h-[460px] rounded-2xl overflow-hidden border border-[rgba(6,182,212,0.15)]">
                 <Image
                   src="/images/hero-portrait.png"
                   alt={personalInfo.name}
@@ -135,7 +135,7 @@ export default function Hero() {
               <div className="absolute -top-4 -right-4 w-12 h-12 rounded-xl bg-[rgba(8,145,178,0.15)] border border-[rgba(6,182,212,0.2)] flex items-center justify-center animate-float backdrop-blur-sm">
                 <FiSettings className="text-[#67e8f9]" size={18} />
               </div>
-              <div className="absolute top-1/2 -left-6 w-10 h-10 rounded-lg bg-[rgba(8,145,178,0.12)] border border-[rgba(6,182,212,0.15)] flex items-center justify-center animate-float-slow backdrop-blur-sm">
+              <div className="absolute top-1/2 -left-5 w-10 h-10 rounded-lg bg-[rgba(8,145,178,0.12)] border border-[rgba(6,182,212,0.15)] flex items-center justify-center animate-float-slow backdrop-blur-sm">
                 <SiReact className="text-[#61dafb]" size={16} />
               </div>
               <div className="absolute -bottom-2 right-8 w-11 h-11 rounded-xl bg-[rgba(8,145,178,0.12)] border border-[rgba(6,182,212,0.15)] flex items-center justify-center animate-float-delayed backdrop-blur-sm">

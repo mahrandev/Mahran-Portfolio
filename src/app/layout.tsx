@@ -35,8 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
-      <body className="min-h-screen">{children}</body>
+    <html lang="en" className={`${inter.variable} antialiased overflow-x-hidden`}>
+      <body className="min-h-screen bg-[#050510] text-slate-200">
+        <div className="relative overflow-hidden flex flex-col min-h-screen w-full">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }

@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainer } from "@/lib/animations";
+import { fadeUp, slideInLeft, slideInRight, scaleIn, staggerContainer } from "@/lib/animations";
 import { personalInfo, socialLinks } from "@/data/portfolio-data";
 import SectionHeading from "./section-heading";
 import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+
+const cardVariants = [slideInLeft, fadeUp, slideInRight];
 
 const contactCards = [
   {
@@ -62,13 +64,13 @@ export default function Contact() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, amount: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
         >
           {contactCards.map((card) => (
             <motion.div
               key={card.label}
-              variants={fadeUp}
+              variants={cardVariants[contactCards.indexOf(card) % 3]}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
               className="glass-card p-6 md:p-8 text-center group"
             >
@@ -95,7 +97,7 @@ export default function Contact() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.5 }}
           className="flex justify-center gap-4 mb-10"
         >
           {socialIcons.map((social) => (
@@ -117,7 +119,7 @@ export default function Contact() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.5 }}
           className="text-center"
         >
           <a

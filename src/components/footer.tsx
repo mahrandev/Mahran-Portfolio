@@ -9,7 +9,7 @@ export default function Footer() {
       variants={fadeIn}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.5 }}
       className="border-t border-[rgba(6,182,212,0.08)] py-8"
     >
       <div className="section-container">

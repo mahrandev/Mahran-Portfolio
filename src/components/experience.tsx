@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
+import { staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 import { workExperience, education } from "@/data/portfolio-data";
 import SectionHeading from "./section-heading";
 import { FiBriefcase, FiBookOpen, FiMapPin, FiCalendar } from "react-icons/fi";
@@ -21,7 +21,7 @@ export default function Experience() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, amount: 0.1 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"
         >
           {/* Work Experience */}
@@ -92,9 +92,12 @@ export default function Experience() {
             <div className="space-y-8">
               {education.map((edu, index) => (
                 <div key={index} className="relative pl-7">
-                  {/* Timeline dot */}
+                  {/* Timeline dot and line */}
                   <div className="absolute left-0 top-1.5">
                     <div className="w-3 h-3 rounded-full bg-[#0891b2]" />
+                    {index < education.length - 1 && (
+                      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-0.5 h-[calc(100%+32px)] bg-[rgba(8,145,178,0.2)]" />
+                    )}
                   </div>
 
                   <div>
@@ -114,9 +117,26 @@ export default function Experience() {
                         {edu.period}
                       </span>
                     </div>
-                    <p className="text-[#9ca3af] text-sm leading-relaxed">
-                      {edu.description}
-                    </p>
+                    {edu.description && (
+                      <p className="text-[#9ca3af] text-sm leading-relaxed">
+                        {edu.description}
+                      </p>
+                    )}
+                    {edu.points && (
+                      <ul className="space-y-1.5 mt-2">
+                        {edu.points.map((point, i) => (
+                          <li
+                            key={i}
+                            className="text-[#9ca3af] text-sm leading-relaxed flex items-start gap-2"
+                          >
+                            <span className="text-[#0891b2] mt-1.5 flex-shrink-0">
+                              •
+                            </span>
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               ))}

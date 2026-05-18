@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp } from "@/lib/animations";
+import { scaleIn } from "@/lib/animations";
 import { FiArrowRight } from "react-icons/fi";
 
 export default function CollaborateCta() {
@@ -13,10 +13,10 @@ export default function CollaborateCta() {
 
       <div className="section-container relative z-10">
         <motion.div
-          variants={fadeUp}
+          variants={scaleIn}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, amount: 0.3 }}
           className="text-center max-w-2xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

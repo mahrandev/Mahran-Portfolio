@@ -2,13 +2,13 @@ export const personalInfo = {
   name: "Amr Mahran",
   firstName: "Amr",
   lastName: "Mahran",
-  title: "Full-Stack Developer",
+  title: "React & Front-End Developer",
   email: "amrmahran200018@gmail.com",
   phone: "01121145208",
   location: "Cairo, Egypt",
   locationFull: "Cairo, Egypt",
   status: "Open to opportunities",
-  bio: "A Full-Stack Developer specializing in building fast, beautiful, and scalable front-end applications powered by modern tools like Next.js, TypeScript, Shadcn UI, and Supabase.",
+  bio: "A React & Front-End Developer specializing in building fast, beautiful, and scalable web applications powered by modern tools like Next.js, TypeScript, Shadcn UI, and Supabase.",
   heroDescription:
     "I craft pixel-perfect, high-performance web applications using React, Next.js, TypeScript, and Supabase — turning ideas into polished digital products.",
   quote:
@@ -170,49 +170,53 @@ export const projects = [
 
 export const workExperience = [
   {
-    title: "Full-Stack Developer",
+    title: "Cairo Airport Ride (Transportation & Booking Platform)",
     company: "Freelance",
     location: "Egypt",
-    period: "2025 - Present",
+    period: "2026",
     points: [
-      "Building production-ready React and Next.js applications with TypeScript and Supabase",
-      "Designing scalable UI systems using Tailwind CSS, Shadcn UI, and Framer Motion",
-      "Integrating TanStack Query for efficient server-state management and data caching",
-      "Implementing Supabase Auth, real-time databases, and Row-Level Security policies",
-      "Optimizing web apps for performance, SEO, and core web vitals",
+      "Developed a fast and interactive user interface for a commercial airport transfer service using Next.js, React, and Tailwind CSS.",
+      "Implemented a multilingual architecture to support both English and Arabic, providing a seamless experience for local and international travelers.",
+      "Built dynamic vehicle selection and pricing pages to streamline the booking process for users.",
+      "Integrated direct WhatsApp routing to facilitate instant customer communication and reservations.",
+      "Optimized the platform for SEO and performance, ensuring fast loading times across all mobile and desktop devices.",
     ],
   },
   {
-    title: "Front-End Developer",
+    title: "Tourism ERP System",
     company: "Freelance",
     location: "Egypt",
-    period: "2024",
+    period: "2025",
     points: [
-      "Developed responsive and accessible web applications using React and Tailwind CSS",
-      "Built reusable component libraries following design system principles",
-      "Enhanced website performance, loading speed, and cross-browser compatibility",
-    ],
-  },
-  {
-    title: "WordPress Developer",
-    company: "Freelance",
-    location: "Egypt",
-    period: "2023",
-    points: [
-      "Built and customized WordPress websites for business clients",
-      "Optimized website performance and improved UI/UX",
-      "Integrated third-party plugins and APIs to extend functionality",
+      "Developed a robust front-end architecture for a comprehensive Tourism ERP platform to streamline complex business operations.",
+      "Built an advanced CRM module to efficiently manage client profiles, communications, and booking history.",
+      "Implemented a fully functional Attendance Management system to track staff schedules and daily logs accurately.",
+      "Integrated secure Authentication and Role-Based Access Control to manage user permissions and protect sensitive data.",
+      "Integrated TanStack Query with React and TypeScript for high-performance server-state management and seamless data fetching.",
+      "Designed a responsive and modern user interface utilizing Shadcn UI and Tailwind CSS to deliver an optimal user experience.",
     ],
   },
 ];
 
 export const education = [
   {
-    title: "Bachelor's Degree in Computer Science (In Progress)",
-    institution: "Borg El Arab Technological University",
+    title: "Bachelor of Law",
+    institution: "Ain Shams University",
     location: "Cairo, Egypt",
-    period: "2022 - Present",
+    period: "Class of 2026",
     description:
-      "Currently studying computer science with a focus on front-end development, web technologies, and modern frameworks. Actively building real-world projects using React, Next.js, TypeScript, and Supabase.",
+      "Developing strong analytical thinking, structured reasoning, and problem-solving methodologies that complement my software development logical path.",
+  },
+  {
+    title: "Front-End Development & Programming Fundamentals Diploma",
+    institution: "Almdrasa Platform",
+    location: "Online",
+    period: "Completed: 2025",
+    description: "",
+    points: [
+      "Learned the core basics of programming and problem-solving.",
+      "Specialized in front-end web development to build interactive (responding to user actions) user interfaces.",
+    ],
   },
 ];
+

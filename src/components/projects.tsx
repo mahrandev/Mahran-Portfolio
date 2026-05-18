@@ -30,7 +30,7 @@ export default function Projects() {
               const isEven = index % 2 === 1;
               const a = getAnim(index);
               return (
-                <motion.div key={project.title} initial={a.initial} whileInView={a.whileInView} viewport={{ once: false, amount: 0.15 }} exit={a.exit} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="glass-card overflow-hidden group">
+                <motion.div key={project.title} initial={a.initial} whileInView={a.whileInView} viewport={{ once: true, amount: 0.15 }} exit={a.exit} transition={{ duration: 1.2, ease: "easeOut" }} className="glass-card overflow-hidden group">
                   <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className={`relative h-[280px] sm:h-[320px] lg:h-auto lg:min-h-[400px] overflow-hidden ${isEven ? "lg:order-2" : "lg:order-1"}`}>
                       <div className="absolute top-4 left-4 z-10 project-number">{project.number}</div>
@@ -55,7 +55,7 @@ export default function Projects() {
           </AnimatePresence>
         </div>
         {projects.length > 4 && (
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.5 }} transition={{ duration: 0.8, delay: 0.1 }} className="flex justify-center mt-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.8, delay: 0.1 }} className="flex justify-center mt-12">
             <button onClick={() => setShowAll(!showAll)} className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full border border-[rgba(6,182,212,0.3)] bg-[rgba(8,145,178,0.08)] text-[#67e8f9] font-medium text-sm transition-all duration-300 hover:border-[rgba(6,182,212,0.6)] hover:bg-[rgba(8,145,178,0.15)] hover:shadow-[0_0_30px_rgba(8,145,178,0.15)]">
               {showAll ? (<><FiChevronUp size={18} className="transition-transform duration-300 group-hover:-translate-y-0.5" />Show Less</>) : (<><FiChevronDown size={18} className="transition-transform duration-300 group-hover:translate-y-0.5" />Show {hiddenCount} More Projects</>)}
             </button>

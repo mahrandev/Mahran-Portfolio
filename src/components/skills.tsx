@@ -65,11 +65,11 @@ export default function Skills() {
                 key={category.title}
                 initial={anim.initial}
                 whileInView={anim.whileInView}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{
-                  duration: 1,
+                  duration: 1.2,
                   delay: index * 0.1,
-                  ease: [0.22, 1, 0.36, 1],
+                  ease: "easeOut",
                 }}
                 whileHover={{ y: -4, transition: { duration: 0.3 } }}
                 className="glass-card p-6 md:p-7 group"

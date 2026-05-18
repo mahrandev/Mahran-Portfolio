@@ -38,7 +38,7 @@ export default function About() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.15 }}
           className="grid grid-cols-1 gap-6"
         >
           {/* Top Row */}

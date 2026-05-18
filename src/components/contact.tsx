@@ -64,7 +64,7 @@ export default function Contact() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
         >
           {contactCards.map((card) => (
@@ -97,7 +97,7 @@ export default function Contact() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           className="flex justify-center gap-4 mb-10"
         >
           {socialIcons.map((social) => (
@@ -119,7 +119,7 @@ export default function Contact() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           className="text-center"
         >
           <a

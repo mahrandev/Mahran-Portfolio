@@ -16,7 +16,7 @@ export default function CollaborateCta() {
           variants={scaleIn}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="text-center max-w-2xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

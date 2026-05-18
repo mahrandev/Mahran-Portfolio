@@ -136,7 +136,7 @@ export const projects = [
     description:
       "A comprehensive ERP system for tourism agencies. I refactored the project to manage bookings, invoices, and client relations smoothly. It also includes an integrated attendance management plugin to improve operational efficiency.",
     techs: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
-    image: "/images/tourism-erp.png",
+    image: "/images/tourism-erp.webp",
     liveUrl: "https://tourism-erp-management.vercel.app",
   },
   {
@@ -145,7 +145,7 @@ export const projects = [
     description:
       "A premium airport transfer platform enabling travelers to seamlessly book rides, browse vehicle fleets, and view fixed pricing through a clean and intuitive interface.",
     techs: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    image: "/images/cairo-airport-ride.png",
+    image: "/images/cairo-airport-ride.webp",
     liveUrl: "https://cairoairportride.com",
   },
   {
@@ -154,7 +154,7 @@ export const projects = [
     description:
       "A modern online store designed to showcase products clearly. Users can browse a wide catalog of items, add them to their shopping cart, and enjoy a seamless shopping experience with a fully responsive design.",
     techs: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
-    image: "/images/exclusive-ecommerce.png",
+    image: "/images/exclusive-ecommerce.webp",
     liveUrl: "https://exclusive-ecommerce-seven.vercel.app",
   },
   {
@@ -163,7 +163,7 @@ export const projects = [
     description:
       "A premium, pixel-perfect landing page for a modern VPN provider. Built using semantic HTML5 and the latest Tailwind CSS v4, featuring a fully responsive mobile-first design, interactive custom animations, structured pricing matrices, and optimized SEO practices.",
     techs: ["HTML5", "Tailwind CSS", "JavaScript"],
-    image: "/images/lasles-vpn.png",
+    image: "/images/lasles-vpn.webp",
     liveUrl: "https://landing-ten-silk-63.vercel.app",
   },
 ];

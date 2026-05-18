@@ -21,7 +21,7 @@ export default function Experience() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"
         >
           {/* Work Experience */}

@@ -120,7 +120,7 @@ export default function Hero() {
               {/* Portrait image */}
               <div className="relative w-[200px] h-[240px] sm:w-[260px] sm:h-[320px] md:w-[300px] md:h-[370px] lg:w-[380px] lg:h-[460px] rounded-2xl overflow-hidden border border-[rgba(6,182,212,0.15)]">
                 <Image
-                  src="/images/hero-portrait.png"
+                  src="/images/hero-portrait.webp"
                   alt={personalInfo.name}
                   fill
                   className="object-cover object-top"

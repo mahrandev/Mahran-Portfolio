@@ -17,7 +17,7 @@ export const personalInfo = {
 
 export const socialLinks = {
   github: "https://github.com/mahrandev",
-  linkedin: "https://www.linkedin.com/feed/",
+  linkedin: "https://www.linkedin.com/in/amr-mahran-21a34b298/",
   whatsapp: "https://wa.me/201121145208",
   email: "mailto:amrmahran200018@gmail.com",
 };
@@ -219,4 +219,3 @@ export const education = [
     ],
   },
 ];
-

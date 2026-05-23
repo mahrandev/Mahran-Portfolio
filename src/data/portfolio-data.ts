@@ -164,7 +164,7 @@ export const projects = [
       "A premium, pixel-perfect landing page for a modern VPN provider. Built using semantic HTML5 and the latest Tailwind CSS v4, featuring a fully responsive mobile-first design, interactive custom animations, structured pricing matrices, and optimized SEO practices.",
     techs: ["HTML5", "Tailwind CSS", "JavaScript"],
     image: "/images/lasles-vpn.webp",
-    liveUrl: "https://landing-ten-silk-63.vercel.app",
+    liveUrl: "https://landing-sksb.vercel.app",
   },
 ];
 

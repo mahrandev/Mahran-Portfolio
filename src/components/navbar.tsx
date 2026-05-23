@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail, FiMenu, FiX } from "react-icons/fi";
-import { HiOutlineDotsHorizontal } from "react-icons/hi";
+
 import { socialLinks } from "@/data/portfolio-data";
 
 const navLinks = [
@@ -22,22 +22,37 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-
-      const sections = navLinks.map((l) => l.href.slice(1));
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 150) {
-            setActiveSection(sections[i]);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+
+    // IntersectionObserver for tracking active sections
+    const observerOptions = {
+      root: null,
+      rootMargin: "-25% 0px -55% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    navLinks.forEach((link) => {
+      const el = document.getElementById(link.href.slice(1));
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const handleNavClick = (href: string) => {
@@ -54,7 +69,7 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-[background-color,border-color,box-shadow] duration-300 ${
           isScrolled
             ? "bg-[#0d0d20]/80 backdrop-blur-xl border border-[rgba(6,182,212,0.12)] shadow-lg shadow-black/20"
             : "bg-[#0d0d20]/50 backdrop-blur-md border border-transparent"
@@ -75,12 +90,19 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer ${
+                className={`relative px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer ${
                   activeSection === link.href.slice(1)
-                    ? "text-[#0891b2]"
+                    ? "text-[#67e8f9]"
                     : "text-[#9ca3af] hover:text-white"
                 }`}
               >
+                {activeSection === link.href.slice(1) && (
+                  <motion.span
+                    layoutId="activeNavPill"
+                    className="absolute inset-0 bg-[rgba(8,145,178,0.12)] border border-[rgba(6,182,212,0.2)] rounded-full -z-10"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
                 {link.label}
               </button>
             ))}
@@ -113,12 +135,7 @@ export default function Navbar() {
             >
               <FiMail size={17} />
             </a>
-            <button
-              className="text-[#9ca3af] hover:text-white transition-colors p-1.5 cursor-pointer"
-              aria-label="More"
-            >
-              <HiOutlineDotsHorizontal size={17} />
-            </button>
+
           </div>
 
           {/* Mobile Menu Button */}

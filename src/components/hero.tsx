@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { fadeUp, fadeIn, staggerContainer } from "@/lib/animations";
+import { fadeUp, fadeIn, scaleIn, staggerContainer } from "@/lib/animations";
 import { personalInfo, heroTechStack } from "@/data/portfolio-data";
 import TypingEffect from "./typing-effect";
 import {
@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-sec-1"
     >
       {/* Background glow */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -107,11 +107,10 @@ export default function Hero() {
 
           {/* Right - Profile Image */}
           <motion.div
-            variants={fadeIn}
+            variants={scaleIn}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="order-1 lg:order-2 relative flex justify-center px-8 md:px-6 lg:px-0"
+            className="order-1 lg:order-2 relative flex justify-center px-8 md:px-6 lg:px-0 will-change-transform"
           >
             <div className="relative">
               {/* Purple glow behind image */}

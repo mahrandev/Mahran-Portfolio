@@ -1,14 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
+import ScrollReveal from "./scroll-reveal";
 import { workExperience, education } from "@/data/portfolio-data";
 import SectionHeading from "./section-heading";
 import { FiBriefcase, FiBookOpen, FiMapPin, FiCalendar } from "react-icons/fi";
 
 export default function Experience() {
   return (
-    <section className="py-24 md:py-32 relative">
+    <section className="py-24 md:py-32 relative bg-gradient-sec-6">
       <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-[rgba(8,145,178,0.04)] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="section-container relative z-10">
@@ -17,15 +16,9 @@ export default function Experience() {
           subtitle="My professional journey and educational background that have shaped my skills and expertise."
         />
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Work Experience */}
-          <motion.div variants={slideInLeft}>
+          <ScrollReveal preset="slide-left" className="w-full">
             <div className="flex items-center gap-3 mb-8">
               <FiBriefcase className="text-[#67e8f9]" size={22} />
               <h3 className="text-xl md:text-2xl font-bold text-white">
@@ -78,10 +71,10 @@ export default function Experience() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </ScrollReveal>
 
           {/* Education */}
-          <motion.div variants={slideInRight}>
+          <ScrollReveal preset="slide-right" className="w-full">
             <div className="flex items-center gap-3 mb-8">
               <FiBookOpen className="text-[#67e8f9]" size={22} />
               <h3 className="text-xl md:text-2xl font-bold text-white">
@@ -141,8 +134,8 @@ export default function Experience() {
                 </div>
               ))}
             </div>
-          </motion.div>
-        </motion.div>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );

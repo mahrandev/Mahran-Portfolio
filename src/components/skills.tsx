@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { skillCategories } from "@/data/portfolio-data";
 import SectionHeading from "./section-heading";
+import ScrollReveal from "./scroll-reveal";
 import {
   FiSettings,
   FiCode,
@@ -21,34 +22,9 @@ const categoryIcons: Record<string, React.ReactNode> = {
   gitBranch: <FiGitBranch size={28} className="text-[#67e8f9]" />,
 };
 
-const getCardAnimation = (index: number) => {
-  const row = Math.floor(index / 3);
-  const col = index % 3;
-
-  if (col === 0) {
-    // Left column: slide from left
-    return {
-      initial: { opacity: 0, x: -40 },
-      whileInView: { opacity: 1, x: 0 },
-    };
-  } else if (col === 1) {
-    // Middle column: slide from bottom
-    return {
-      initial: { opacity: 0, y: 50 },
-      whileInView: { opacity: 1, y: 0 },
-    };
-  } else {
-    // Right column: slide from right
-    return {
-      initial: { opacity: 0, x: 40 },
-      whileInView: { opacity: 1, x: 0 },
-    };
-  }
-};
-
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 md:py-32 relative">
+    <section id="skills" className="py-24 md:py-32 relative bg-gradient-sec-3">
       <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[rgba(8,145,178,0.04)] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="section-container relative z-10">
@@ -59,40 +35,36 @@ export default function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => {
-            const anim = getCardAnimation(index);
+            // Alternate presets for varied reveal animations: left-column slides left, middle column fades up, right-column slides right
+            const presets: ("slide-left" | "fade-up" | "slide-right")[] = ["slide-left", "fade-up", "slide-right"];
+            const preset = presets[index % presets.length];
+            
             return (
-              <motion.div
-                key={category.title}
-                initial={anim.initial}
-                whileInView={anim.whileInView}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 1.2,
-                  delay: index * 0.1,
-                  ease: "easeOut",
-                }}
-                whileHover={{ y: -4, transition: { duration: 0.3 } }}
-                className="glass-card p-6 md:p-7 group"
-              >
-                <div className="mb-4">
-                  {categoryIcons[category.icon] ?? (
-                    <FiCode size={28} className="text-[#67e8f9]" />
-                  )}
-                </div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {category.title}
-                </h3>
-                <p className="text-[#9ca3af] text-sm leading-relaxed mb-5">
-                  {category.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {category.techs.map((tech) => (
-                    <span key={tech} className="tech-badge text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
+              <ScrollReveal key={category.title} preset={preset} className="w-full">
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
+                  className="glass-card p-6 md:p-7 group h-full"
+                >
+                  <div className="mb-4">
+                    {categoryIcons[category.icon] ?? (
+                      <FiCode size={28} className="text-[#67e8f9]" />
+                    )}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {category.title}
+                  </h3>
+                  <p className="text-[#9ca3af] text-sm leading-relaxed mb-5">
+                    {category.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {category.techs.map((tech) => (
+                      <span key={tech} className="tech-badge text-xs">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              </ScrollReveal>
             );
           })}
         </div>

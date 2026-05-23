@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ScrollProgress from "@/components/scroll-progress";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,7 +37,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} antialiased overflow-x-hidden`}>
-      <body className="min-h-screen bg-[#050510] text-slate-200">
+      <body className="relative min-h-screen bg-[#050510] text-slate-200">
+        <ScrollProgress />
         <div className="relative overflow-hidden flex flex-col min-h-screen w-full">
           {children}
         </div>

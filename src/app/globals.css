@@ -299,3 +299,153 @@ body {
   font-size: 13px;
   font-weight: 600;
 }
+
+/* Native Scroll-Driven Progress Bar (Compositor-bound, 120fps) */
+@supports (animation-timeline: scroll()) {
+  @keyframes grow-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    transform-origin: 0% 50%;
+    z-index: 9999;
+    animation: grow-progress auto linear;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* Fallback/JS Scroll Progress Bar for Safari/Firefox */
+.js-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transform-origin: 0% 50%;
+  z-index: 9999;
+}
+
+/* Hardware acceleration utilities */
+.will-change-transform {
+  will-change: transform, opacity;
+}
+
+/* Button hover icon transitions */
+.btn-primary svg, .btn-outline svg {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Animate right arrows to shift right on hover */
+.btn-primary:hover svg.arrow-icon, 
+.btn-outline:hover svg.arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Animate external links to shift up-right on hover */
+.btn-primary:hover svg.external-link-icon,
+.btn-outline:hover svg.external-link-icon {
+  transform: translate(2px, -2px);
+}
+
+/* Section Background Gradients (Seamlessly blended, extremely close shades) */
+.bg-gradient-sec-1 {
+  background: linear-gradient(180deg, #050510 0%, #060615 100%);
+}
+
+.bg-gradient-sec-2 {
+  background: linear-gradient(180deg, #060615 0%, #07071b 100%);
+}
+
+.bg-gradient-sec-3 {
+  background: linear-gradient(180deg, #07071b 0%, #060615 100%);
+}
+
+.bg-gradient-sec-4 {
+  background: linear-gradient(180deg, #060615 0%, #090921 100%);
+}
+
+.bg-gradient-sec-5 {
+  background: linear-gradient(180deg, #090921 0%, #07071b 100%);
+}
+
+.bg-gradient-sec-6 {
+  background: linear-gradient(180deg, #07071b 0%, #050510 100%);
+}
+
+.bg-gradient-sec-7 {
+  background: linear-gradient(180deg, #050510 0%, #08081e 100%);
+}
+
+/* Premium Glowing Section Separator */
+.glow-separator-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow-separator-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.18) 50%, transparent 100%);
+}
+
+.glow-separator-center {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes separator-pulse {
+  0%, 100% {
+    transform: scale(0.92);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.glow-separator-outer {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.03);
+  border: 1px solid rgba(6, 182, 212, 0.08);
+  animation: separator-pulse 3s infinite ease-in-out;
+}
+
+.glow-separator-middle {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+}
+
+.glow-separator-inner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #67e8f9;
+  box-shadow: 0 0 14px rgba(6, 182, 212, 0.8), 0 0 4px rgba(6, 182, 212, 0.4);
+}
+
+
+

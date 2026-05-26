@@ -132,6 +132,15 @@ export const skillCategories = [
 export const projects = [
   {
     number: "01",
+    title: "Big Burger",
+    description:
+      "A premium, highly interactive landing page for a gourmet burger restaurant. Built using Next.js and Tailwind CSS v4, featuring a dynamic spotlight background color synced with burger selections, custom carousel animations, and immersive parallax ingredient effects.",
+    techs: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    image: "/images/burger.webp",
+    liveUrl: "https://landing-sksb-git-main-mahrandevs-projects.vercel.app",
+  },
+  {
+    number: "02",
     title: "Dawlia Tourism ERP",
     description:
       "A comprehensive ERP system for tourism agencies. I refactored the project to manage bookings, invoices, and client relations smoothly. It also includes an integrated attendance management plugin to improve operational efficiency.",
@@ -140,7 +149,7 @@ export const projects = [
     liveUrl: "https://tourism-erp-management.vercel.app",
   },
   {
-    number: "02",
+    number: "03",
     title: "Cairo Airport Ride",
     description:
       "A premium airport transfer platform enabling travelers to seamlessly book rides, browse vehicle fleets, and view fixed pricing through a clean and intuitive interface.",
@@ -149,7 +158,7 @@ export const projects = [
     liveUrl: "https://cairoairportride.com",
   },
   {
-    number: "03",
+    number: "04",
     title: "Exclusive E-Commerce",
     description:
       "A modern online store designed to showcase products clearly. Users can browse a wide catalog of items, add them to their shopping cart, and enjoy a seamless shopping experience with a fully responsive design.",
@@ -158,7 +167,7 @@ export const projects = [
     liveUrl: "https://exclusive-ecommerce-seven.vercel.app",
   },
   {
-    number: "04",
+    number: "05",
     title: "LaslesVPN",
     description:
       "A premium, pixel-perfect landing page for a modern VPN provider. Built using semantic HTML5 and the latest Tailwind CSS v4, featuring a fully responsive mobile-first design, interactive custom animations, structured pricing matrices, and optimized SEO practices.",

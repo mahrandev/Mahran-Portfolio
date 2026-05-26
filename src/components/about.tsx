@@ -129,7 +129,7 @@ export default function About() {
             {/* Design Philosophy Card */}
             <ScrollReveal preset="fade-up" className="w-full">
               <motion.div
-                className="glass-card p-6 md:p-8 h-full"
+                className="purple-gradient-card p-6 md:p-8 h-full"
               >
                 <h3 className="text-xl font-bold text-white mb-6">
                   Design Philosophy

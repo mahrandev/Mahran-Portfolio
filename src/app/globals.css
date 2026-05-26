@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f0e0d;
-  --foreground: #f4f0e8;
-  --muted: #a39e93;
-  --muted-dark: #6e695f;
-  --accent: #c95c47;
-  --accent-light: #df7d69;
-  --accent-secondary: #95a88f;
-  --accent-secondary-light: #b0c2ab;
-  --accent-glow: rgba(201, 92, 71, 0.15);
-  --card-bg: #171514;
-  --card-border: rgba(163, 158, 147, 0.12);
-  --card-border-hover: rgba(201, 92, 71, 0.3);
-  --surface: #1c1a19;
-  --surface-light: #282523;
+  --background: #050510;
+  --foreground: #ffffff;
+  --muted: #9ca3af;
+  --muted-dark: #6b7280;
+  --accent: #0891b2;
+  --accent-light: #06b6d4;
+  --accent-secondary: #06b6d4;
+  --accent-secondary-light: #67e8f9;
+  --accent-glow: rgba(8, 145, 178, 0.15);
+  --card-bg: #0d0d20;
+  --card-border: rgba(6, 182, 212, 0.12);
+  --card-border-hover: rgba(6, 182, 212, 0.3);
+  --surface: #111128;
+  --surface-light: #1a1a3e;
 }
 
 @theme inline {
@@ -67,7 +67,7 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(201, 92, 71, 0.3);
+  background: rgba(8, 145, 178, 0.3);
   color: #fff;
 }
 
@@ -97,7 +97,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #c95c47 0%, #df7d69 50%, #c95c47 100%);
+  background: linear-gradient(135deg, #0891b2 0%, #67e8f9 50%, #0891b2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,14 +107,14 @@ body {
 .section-underline {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #c95c47, #df7d69);
+  background: linear-gradient(90deg, #0891b2, #67e8f9);
   border-radius: 2px;
   margin: 12px auto 0;
 }
 
 /* Card glass effect */
 .glass-card {
-  background: rgba(23, 21, 20, 0.6);
+  background: rgba(13, 13, 32, 0.6);
   backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: 16px;
@@ -123,7 +123,26 @@ body {
 
 .glass-card:hover {
   border-color: var(--card-border-hover);
-  box-shadow: 0 0 40px rgba(201, 92, 71, 0.08);
+  box-shadow: 0 0 40px rgba(8, 145, 178, 0.08);
+}
+
+/* Purple gradient card (Design Philosophy) */
+.purple-gradient-card {
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 40%, #155e75 100%);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.purple-gradient-card::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
 }
 
 /* Tech badge */
@@ -134,7 +153,7 @@ body {
   padding: 6px 14px;
   border-radius: 9999px;
   border: 1px solid var(--card-border);
-  background: rgba(23, 21, 20, 0.5);
+  background: rgba(13, 13, 32, 0.5);
   font-size: 13px;
   color: var(--muted);
   transition: border-color 0.2s, color 0.2s;
@@ -163,7 +182,7 @@ body {
 
 .btn-primary:hover {
   background: var(--accent-light);
-  box-shadow: 0 4px 20px rgba(201, 92, 71, 0.3);
+  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.3);
 }
 
 .btn-outline {
@@ -182,7 +201,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: rgba(201, 92, 71, 0.1);
+  background: rgba(8, 145, 178, 0.1);
   border-color: var(--accent);
 }
 
@@ -238,7 +257,7 @@ body {
   transform: translateX(-50%);
   width: 2px;
   height: calc(100% + 40px);
-  background: rgba(201, 92, 71, 0.2);
+  background: rgba(8, 145, 178, 0.2);
 }
 
 /* Project number badge */
@@ -300,31 +319,31 @@ body {
 
 /* Section Background Gradients (Seamlessly blended, extremely close shades) */
 .bg-gradient-sec-1 {
-  background: linear-gradient(180deg, #0f0e0d 0%, #151413 100%);
+  background: linear-gradient(180deg, #050510 0%, #060615 100%);
 }
 
 .bg-gradient-sec-2 {
-  background: linear-gradient(180deg, #151413 0%, #1a1918 100%);
+  background: linear-gradient(180deg, #060615 0%, #07071b 100%);
 }
 
 .bg-gradient-sec-3 {
-  background: linear-gradient(180deg, #1a1918 0%, #151413 100%);
+  background: linear-gradient(180deg, #07071b 0%, #060615 100%);
 }
 
 .bg-gradient-sec-4 {
-  background: linear-gradient(180deg, #151413 0%, #1e1c1b 100%);
+  background: linear-gradient(180deg, #060615 0%, #090921 100%);
 }
 
 .bg-gradient-sec-5 {
-  background: linear-gradient(180deg, #1e1c1b 0%, #1a1918 100%);
+  background: linear-gradient(180deg, #090921 0%, #07071b 100%);
 }
 
 .bg-gradient-sec-6 {
-  background: linear-gradient(180deg, #1a1918 0%, #0f0e0d 100%);
+  background: linear-gradient(180deg, #07071b 0%, #050510 100%);
 }
 
 .bg-gradient-sec-7 {
-  background: linear-gradient(180deg, #0f0e0d 0%, #1c1a19 100%);
+  background: linear-gradient(180deg, #050510 0%, #08081e 100%);
 }
 
 /* Premium Glowing Section Separator */
@@ -341,7 +360,7 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(201, 92, 71, 0.18) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.18) 50%, transparent 100%);
 }
 
 .glow-separator-center {
@@ -368,8 +387,8 @@ body {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: rgba(201, 92, 71, 0.03);
-  border: 1px solid rgba(201, 92, 71, 0.08);
+  background: rgba(6, 182, 212, 0.03);
+  border: 1px solid rgba(6, 182, 212, 0.08);
   animation: separator-pulse 3s infinite ease-in-out;
 }
 
@@ -378,16 +397,16 @@ body {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(201, 92, 71, 0.08);
-  border: 1px solid rgba(201, 92, 71, 0.15);
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.15);
 }
 
 .glow-separator-inner {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #df7d69;
-  box-shadow: 0 0 14px rgba(201, 92, 71, 0.8), 0 0 4px rgba(201, 92, 71, 0.4);
+  background: #67e8f9;
+  box-shadow: 0 0 14px rgba(6, 182, 212, 0.8), 0 0 4px rgba(6, 182, 212, 0.4);
 }
 
 

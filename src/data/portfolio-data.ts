@@ -137,7 +137,7 @@ export const projects = [
       "A premium, highly interactive landing page for a gourmet burger restaurant. Built using Next.js and Tailwind CSS v4, featuring a dynamic spotlight background color synced with burger selections, custom carousel animations, and immersive parallax ingredient effects.",
     techs: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     image: "/images/burger.webp",
-    liveUrl: "https://landing-sksb-git-main-mahrandevs-projects.vercel.app",
+    liveUrl: "https://burger-pink-three.vercel.app",
   },
   {
     number: "02",

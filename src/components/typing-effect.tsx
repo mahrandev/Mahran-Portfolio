@@ -39,8 +39,8 @@ export default function TypingEffect() {
 
   return (
     <span className="inline-flex items-center">
-      <span className="text-[#9ca3af]">{displayText}</span>
-      <span className="typing-cursor text-[#0891b2] ml-0.5 text-2xl md:text-3xl font-light">
+      <span className="text-muted">{displayText}</span>
+      <span className="typing-cursor text-accent ml-0.5 text-2xl md:text-3xl font-light">
         |
       </span>
     </span>

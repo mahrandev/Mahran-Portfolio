@@ -31,7 +31,7 @@ export default function About() {
   return (
     <section id="about" className="py-24 md:py-32 relative bg-gradient-sec-2">
       {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[rgba(8,145,178,0.04)] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/4 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="section-container relative z-10">
         <div className="grid grid-cols-1 gap-6">
@@ -40,10 +40,9 @@ export default function About() {
             {/* Main Bio Card */}
             <ScrollReveal preset="slide-left" className="w-full">
               <motion.div
-                whileHover={{ y: -6, scale: 1.015 }}
                 className="glass-card p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start h-full"
               >
-                <div className="w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] rounded-xl overflow-hidden flex-shrink-0 border border-[rgba(6,182,212,0.2)] mx-auto sm:mx-0">
+                <div className="w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] rounded-xl overflow-hidden flex-shrink-0 border border-accent/20 mx-auto sm:mx-0">
                   <Image
                     src="/images/about-portrait.webp"
                     alt={personalInfo.name}
@@ -56,7 +55,7 @@ export default function About() {
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                     I&apos;m {personalInfo.name}
                   </h3>
-                  <p className="text-[#9ca3af] leading-relaxed text-base">
+                  <p className="text-muted leading-relaxed text-base">
                     A{" "}
                     <span className="text-white font-semibold">
                       Full-Stack Developer
@@ -74,19 +73,18 @@ export default function About() {
               <div className="flex flex-col gap-4 h-full">
                 {/* Email Card */}
                 <motion.div
-                  whileHover={{ y: -4, scale: 1.015 }}
                   className="glass-card p-4 flex items-center gap-3"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[rgba(8,145,178,0.15)] flex items-center justify-center flex-shrink-0">
-                    <FiMail className="text-[#67e8f9]" size={18} />
+                  <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
+                    <FiMail className="text-accent-light" size={18} />
                   </div>
                   <div>
-                    <p className="text-xs text-[#6b7280] uppercase tracking-wider font-medium">
+                    <p className="text-xs text-muted-dark uppercase tracking-wider font-medium">
                       Email
                     </p>
                     <a
                       href={socialLinks.email}
-                      className="text-sm text-white hover:text-[#67e8f9] transition-colors"
+                      className="text-sm text-white hover:text-accent-light transition-colors"
                     >
                       {personalInfo.email}
                     </a>
@@ -95,14 +93,13 @@ export default function About() {
 
                 {/* Location Card */}
                 <motion.div
-                  whileHover={{ y: -4, scale: 1.015 }}
                   className="glass-card p-4 flex items-center gap-3"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[rgba(8,145,178,0.15)] flex items-center justify-center flex-shrink-0">
-                    <FiMapPin className="text-[#67e8f9]" size={18} />
+                  <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
+                    <FiMapPin className="text-accent-light" size={18} />
                   </div>
                   <div>
-                    <p className="text-xs text-[#6b7280] uppercase tracking-wider font-medium">
+                    <p className="text-xs text-muted-dark uppercase tracking-wider font-medium">
                       Location
                     </p>
                     <p className="text-sm text-white">{personalInfo.location}</p>
@@ -111,14 +108,13 @@ export default function About() {
 
                 {/* Status Card */}
                 <motion.div
-                  whileHover={{ y: -4, scale: 1.015 }}
                   className="glass-card p-4 flex items-center gap-3"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[rgba(8,145,178,0.15)] flex items-center justify-center flex-shrink-0">
-                    <FiSearch className="text-[#67e8f9]" size={18} />
+                  <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
+                    <FiSearch className="text-accent-light" size={18} />
                   </div>
                   <div>
-                    <p className="text-xs text-[#6b7280] uppercase tracking-wider font-medium">
+                    <p className="text-xs text-muted-dark uppercase tracking-wider font-medium">
                       Status
                     </p>
                     <p className="text-sm text-white">{personalInfo.status}</p>
@@ -133,8 +129,7 @@ export default function About() {
             {/* Design Philosophy Card */}
             <ScrollReveal preset="fade-up" className="w-full">
               <motion.div
-                whileHover={{ y: -6, scale: 1.015 }}
-                className="purple-gradient-card p-6 md:p-8 h-full"
+                className="glass-card p-6 md:p-8 h-full"
               >
                 <h3 className="text-xl font-bold text-white mb-6">
                   Design Philosophy
@@ -142,7 +137,7 @@ export default function About() {
                 <div className="grid grid-cols-2 gap-6">
                   {designPhilosophy.map((item) => (
                     <div key={item.title}>
-                      <div className="text-white/80 mb-2">
+                      <div className="text-accent-secondary mb-2">
                         {philosophyIcons[item.icon]}
                       </div>
                       <h4 className="text-white font-semibold text-sm mb-1">
@@ -158,26 +153,25 @@ export default function About() {
             {/* Technical Arsenal Card */}
             <ScrollReveal preset="blur-in" className="w-full">
               <motion.div
-                whileHover={{ y: -6, scale: 1.015 }}
                 className="glass-card p-6 md:p-8 h-full"
               >
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                  <FiCode className="text-[#67e8f9]" size={20} />
+                  <FiCode className="text-accent-light" size={20} />
                   Technical Arsenal
                 </h3>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {technicalArsenal.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-[rgba(6,182,212,0.15)] bg-[rgba(13,13,32,0.5)] text-sm text-[#9ca3af]"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-card-border bg-card-bg/50 text-sm text-muted"
                     >
                       <FaCheckCircle className="text-green-400" size={12} />
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="border-t border-[rgba(6,182,212,0.1)] pt-5">
-                  <p className="text-[#6b7280] text-sm italic leading-relaxed">
+                <div className="border-t border-card-border pt-5">
+                  <p className="text-muted-dark text-sm italic leading-relaxed">
                     {personalInfo.quote}
                   </p>
                 </div>

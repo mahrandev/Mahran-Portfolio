@@ -14,18 +14,18 @@ import {
 } from "react-icons/fi";
 
 const categoryIcons: Record<string, React.ReactNode> = {
-  settings: <FiSettings size={28} className="text-[#67e8f9]" />,
-  code: <FiCode size={28} className="text-[#67e8f9]" />,
-  layers: <FiLayers size={28} className="text-[#67e8f9]" />,
-  database: <FiDatabase size={28} className="text-[#67e8f9]" />,
-  wrench: <FiTool size={28} className="text-[#67e8f9]" />,
-  gitBranch: <FiGitBranch size={28} className="text-[#67e8f9]" />,
+  settings: <FiSettings size={28} className="text-accent-secondary" />,
+  code: <FiCode size={28} className="text-accent-secondary" />,
+  layers: <FiLayers size={28} className="text-accent-secondary" />,
+  database: <FiDatabase size={28} className="text-accent-secondary" />,
+  wrench: <FiTool size={28} className="text-accent-secondary" />,
+  gitBranch: <FiGitBranch size={28} className="text-accent-secondary" />,
 };
 
 export default function Skills() {
   return (
     <section id="skills" className="py-24 md:py-32 relative bg-gradient-sec-3">
-      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[rgba(8,145,178,0.04)] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-accent/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="section-container relative z-10">
         <SectionHeading
@@ -42,18 +42,17 @@ export default function Skills() {
             return (
               <ScrollReveal key={category.title} preset={preset} className="w-full">
                 <motion.div
-                  whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
                   className="glass-card p-6 md:p-7 group h-full"
                 >
                   <div className="mb-4">
                     {categoryIcons[category.icon] ?? (
-                      <FiCode size={28} className="text-[#67e8f9]" />
+                      <FiCode size={28} className="text-accent-secondary" />
                     )}
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">
                     {category.title}
                   </h3>
-                  <p className="text-[#9ca3af] text-sm leading-relaxed mb-5">
+                  <p className="text-muted text-sm leading-relaxed mb-5">
                     {category.description}
                   </p>
                   <div className="flex flex-wrap gap-2">

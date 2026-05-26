@@ -11,7 +11,7 @@ export default function SectionHeading({ title, subtitle }: SectionHeadingProps)
       <h2 className="text-3xl md:text-4xl font-bold text-white">{title}</h2>
       <div className="section-underline" />
       {subtitle && (
-        <p className="mt-5 text-[#9ca3af] text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-5 text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       )}

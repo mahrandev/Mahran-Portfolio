@@ -17,68 +17,54 @@ export default function ScrollReveal({
   const ref = useRef<HTMLDivElement>(null);
 
   // Track scroll position of the element relative to viewport
+  // Animation triggers when top of element meets viewport bottom ("start end")
+  // and completes when top of element is 80% from the top ("start 80%")
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["start end", "start 80%"],
   });
 
   // Set up values based on preset
   let initialX = 0;
-  let exitX = 0;
   let initialY = 0;
-  let exitY = 0;
   let initialScale = 1;
-  let exitScale = 1;
   let initialBlur = 0;
-  let exitBlur = 0;
 
   switch (preset) {
     case "fade-up":
       initialY = 45;
-      exitY = -45;
       initialScale = 0.98;
-      exitScale = 0.98;
       break;
     case "fade-down":
       initialY = -45;
-      exitY = 45;
       initialScale = 0.98;
-      exitScale = 0.98;
       break;
     case "slide-left":
       initialX = -50;
-      exitX = -50;
       initialScale = 0.99;
-      exitScale = 0.99;
       break;
     case "slide-right":
       initialX = 50;
-      exitX = 50;
       initialScale = 0.99;
-      exitScale = 0.99;
       break;
     case "scale-up":
       initialScale = 0.92;
-      exitScale = 0.92;
       initialY = 20;
-      exitY = -20;
       break;
     case "blur-in":
       initialBlur = 8;
-      exitBlur = 8;
       initialY = 20;
-      exitY = -20;
       break;
   }
 
   // Smooth spring physics to filter out scroll jitter and add premium inertia
   const springConfig = { stiffness: 130, damping: 26, mass: 0.8 };
 
-  const rawOpacity = useTransform(scrollYProgress, [0, 0.15, 0.65, 0.9], [0, 1, 1, 0]);
-  const rawX = useTransform(scrollYProgress, [0, 0.15, 0.65, 0.9], [initialX, 0, 0, exitX]);
-  const rawY = useTransform(scrollYProgress, [0, 0.15, 0.65, 0.9], [initialY, 0, 0, exitY]);
-  const rawScale = useTransform(scrollYProgress, [0, 0.15, 0.65, 0.9], [initialScale, 1, 1, exitScale]);
-  const rawBlur = useTransform(scrollYProgress, [0, 0.15, 0.65, 0.9], [initialBlur, 0, 0, exitBlur]);
+  const rawOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const rawX = useTransform(scrollYProgress, [0, 1], [initialX, 0]);
+  const rawY = useTransform(scrollYProgress, [0, 1], [initialY, 0]);
+  const rawScale = useTransform(scrollYProgress, [0, 1], [initialScale, 1]);
+  const rawBlur = useTransform(scrollYProgress, [0, 1], [initialBlur, 0]);
 
   const opacity = useSpring(rawOpacity, springConfig);
   const x = useSpring(rawX, springConfig);

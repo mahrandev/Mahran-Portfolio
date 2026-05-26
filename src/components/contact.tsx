@@ -9,18 +9,18 @@ import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 const contactCards = [
   {
-    icon: <FiMapPin size={24} className="text-[#67e8f9]" />,
+    icon: <FiMapPin size={24} className="text-accent-light" />,
     label: "Location",
     value: personalInfo.location,
   },
   {
-    icon: <FiMail size={24} className="text-[#67e8f9]" />,
+    icon: <FiMail size={24} className="text-accent-light" />,
     label: "Email",
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
   },
   {
-    icon: <FiPhone size={24} className="text-[#67e8f9]" />,
+    icon: <FiPhone size={24} className="text-accent-light" />,
     label: "Phone",
     value: personalInfo.phone,
     href: `tel:${personalInfo.phone}`,
@@ -48,7 +48,7 @@ const socialIcons = [
 export default function Contact() {
   return (
     <section id="contact" className="py-24 md:py-32 relative bg-gradient-sec-7">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[rgba(8,145,178,0.04)] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/4 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="section-container relative z-10">
         <SectionHeading
@@ -65,7 +65,6 @@ export default function Contact() {
             return (
               <ScrollReveal key={card.label} preset={preset} className="w-full">
                 <motion.div
-                  whileHover={{ y: -6, scale: 1.02 }}
                   className="glass-card p-6 md:p-8 text-center group h-full"
                 >
                   <div className="flex justify-center mb-4">{card.icon}</div>
@@ -75,12 +74,12 @@ export default function Contact() {
                   {card.href ? (
                     <a
                       href={card.href}
-                      className="text-[#9ca3af] text-sm hover:text-[#67e8f9] transition-colors"
+                      className="text-muted text-sm hover:text-accent-light transition-colors"
                     >
                       {card.value}
                     </a>
                   ) : (
-                    <p className="text-[#9ca3af] text-sm">{card.value}</p>
+                    <p className="text-muted text-sm">{card.value}</p>
                   )}
                 </motion.div>
               </ScrollReveal>
@@ -98,7 +97,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-12 h-12 rounded-full border border-[rgba(6,182,212,0.15)] bg-[rgba(13,13,32,0.5)] flex items-center justify-center text-[#9ca3af] hover:text-white hover:border-[rgba(6,182,212,0.3)] hover:bg-[rgba(8,145,178,0.1)] transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-card-border bg-card-bg/50 flex items-center justify-center text-muted hover:text-white hover:border-card-border-hover hover:bg-accent/10 transition-all duration-300"
               >
                 {social.icon}
               </a>

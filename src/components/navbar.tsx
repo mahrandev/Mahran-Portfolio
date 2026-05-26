@@ -71,8 +71,8 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-[background-color,border-color,box-shadow] duration-300 ${
           isScrolled
-            ? "bg-[#0d0d20]/80 backdrop-blur-xl border border-[rgba(6,182,212,0.12)] shadow-lg shadow-black/20"
-            : "bg-[#0d0d20]/50 backdrop-blur-md border border-transparent"
+            ? "bg-card-bg/80 backdrop-blur-xl border border-card-border shadow-lg shadow-black/20"
+            : "bg-card-bg/50 backdrop-blur-md border border-transparent"
         } rounded-full px-4 md:px-6 py-3`}
       >
         <div className="flex items-center gap-4 md:gap-6">
@@ -81,7 +81,7 @@ export default function Navbar() {
             onClick={() => handleNavClick("#home")}
             className="text-lg font-bold text-white tracking-tight whitespace-nowrap cursor-pointer"
           >
-            Amr<span className="text-[#0891b2]">.</span>
+            Amr<span className="text-accent">.</span>
           </button>
 
           {/* Desktop Nav Links */}
@@ -92,14 +92,14 @@ export default function Navbar() {
                 onClick={() => handleNavClick(link.href)}
                 className={`relative px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 cursor-pointer ${
                   activeSection === link.href.slice(1)
-                    ? "text-[#67e8f9]"
-                    : "text-[#9ca3af] hover:text-white"
+                    ? "text-accent-light"
+                    : "text-muted hover:text-white"
                 }`}
               >
                 {activeSection === link.href.slice(1) && (
                   <motion.span
                     layoutId="activeNavPill"
-                    className="absolute inset-0 bg-[rgba(8,145,178,0.12)] border border-[rgba(6,182,212,0.2)] rounded-full -z-10"
+                    className="absolute inset-0 bg-accent/12 border border-accent/20 rounded-full -z-10"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -109,12 +109,12 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Social Icons */}
-          <div className="hidden md:flex items-center gap-2 ml-2 border-l border-[rgba(6,182,212,0.12)] pl-4">
+          <div className="hidden md:flex items-center gap-2 ml-2 border-l border-card-border pl-4">
             <a
               href={socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#9ca3af] hover:text-white transition-colors p-1.5"
+              className="text-muted hover:text-white transition-colors p-1.5"
               aria-label="GitHub"
             >
               <FiGithub size={17} />
@@ -123,14 +123,14 @@ export default function Navbar() {
               href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#9ca3af] hover:text-white transition-colors p-1.5"
+              className="text-muted hover:text-white transition-colors p-1.5"
               aria-label="LinkedIn"
             >
               <FiLinkedin size={17} />
             </a>
             <a
               href={socialLinks.email}
-              className="text-[#9ca3af] hover:text-white transition-colors p-1.5"
+              className="text-muted hover:text-white transition-colors p-1.5"
               aria-label="Email"
             >
               <FiMail size={17} />
@@ -141,7 +141,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="md:hidden text-[#9ca3af] hover:text-white transition-colors p-1 cursor-pointer"
+            className="md:hidden text-muted hover:text-white transition-colors p-1 cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMobileOpen ? <FiX size={20} /> : <FiMenu size={20} />}
@@ -157,7 +157,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-20 left-4 right-4 z-40 bg-[#0d0d20]/95 backdrop-blur-xl border border-[rgba(6,182,212,0.12)] rounded-2xl p-6 md:hidden"
+            className="fixed top-20 left-4 right-4 z-40 bg-card-bg/95 backdrop-blur-xl border border-card-border rounded-2xl p-6 md:hidden"
           >
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
@@ -166,19 +166,19 @@ export default function Navbar() {
                   onClick={() => handleNavClick(link.href)}
                   className={`px-4 py-3 rounded-xl text-left text-sm font-medium transition-colors cursor-pointer ${
                     activeSection === link.href.slice(1)
-                      ? "text-[#0891b2] bg-[rgba(8,145,178,0.1)]"
-                      : "text-[#9ca3af] hover:text-white hover:bg-white/5"
+                      ? "text-accent bg-accent/10"
+                      : "text-muted hover:text-white hover:bg-white/5"
                   }`}
                 >
                   {link.label}
                 </button>
               ))}
-              <div className="flex items-center gap-4 pt-4 mt-2 border-t border-[rgba(6,182,212,0.12)]">
+              <div className="flex items-center gap-4 pt-4 mt-2 border-t border-card-border">
                 <a
                   href={socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#9ca3af] hover:text-white transition-colors"
+                  className="text-muted hover:text-white transition-colors"
                 >
                   <FiGithub size={18} />
                 </a>
@@ -186,13 +186,13 @@ export default function Navbar() {
                   href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#9ca3af] hover:text-white transition-colors"
+                  className="text-muted hover:text-white transition-colors"
                 >
                   <FiLinkedin size={18} />
                 </a>
                 <a
                   href={socialLinks.email}
-                  className="text-[#9ca3af] hover:text-white transition-colors"
+                  className="text-muted hover:text-white transition-colors"
                 >
                   <FiMail size={18} />
                 </a>

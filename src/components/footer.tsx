@@ -10,10 +10,10 @@ export default function Footer() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
-      className="border-t border-[rgba(6,182,212,0.08)] py-8"
+      className="border-t border-card-border py-8"
     >
       <div className="section-container">
-        <p className="text-center text-[#6b7280] text-sm">
+        <p className="text-center text-muted-dark text-sm">
           © {new Date().getFullYear()} Amr Mahran. All rights reserved.
         </p>
       </div>

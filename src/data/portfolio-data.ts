@@ -132,6 +132,22 @@ export const skillCategories = [
 export const projects = [
   {
     number: "01",
+    title: "Chunkmaster V2",
+    description:
+      "A highly interactive language learning and vocabulary retention platform utilizing the FSRS (Free Spaced Repetition Scheduler) algorithm. Features an SEO-friendly dictionary mapped to CEFR levels, a hybrid storage architecture (PostgreSQL/Prisma for registered users & IndexedDB/Dexie for guests), real-world video context integration (YouGlish & YouTube), and a personalized learning journey dashboard.",
+    techs: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Dexie.js",
+      "Tailwind CSS",
+    ],
+    image: "/images/chunkmaster.webp",
+    liveUrl: "https://chunkmaster-v2.vercel.app",
+  },
+  {
+    number: "02",
     title: "Big Burger",
     description:
       "A premium, highly interactive landing page for a gourmet burger restaurant. Built using Next.js and Tailwind CSS v4, featuring a dynamic spotlight background color synced with burger selections, custom carousel animations, and immersive parallax ingredient effects.",
@@ -140,7 +156,7 @@ export const projects = [
     liveUrl: "https://burger-pink-three.vercel.app",
   },
   {
-    number: "02",
+    number: "03",
     title: "Dawlia Tourism ERP",
     description:
       "A comprehensive ERP system for tourism agencies. I refactored the project to manage bookings, invoices, and client relations smoothly. It also includes an integrated attendance management plugin to improve operational efficiency.",
@@ -149,7 +165,7 @@ export const projects = [
     liveUrl: "https://tourism-erp-management.vercel.app",
   },
   {
-    number: "03",
+    number: "04",
     title: "Cairo Airport Ride",
     description:
       "A premium airport transfer platform enabling travelers to seamlessly book rides, browse vehicle fleets, and view fixed pricing through a clean and intuitive interface.",
@@ -158,7 +174,7 @@ export const projects = [
     liveUrl: "https://cairoairportride.com",
   },
   {
-    number: "04",
+    number: "05",
     title: "Exclusive E-Commerce",
     description:
       "A modern online store designed to showcase products clearly. Users can browse a wide catalog of items, add them to their shopping cart, and enjoy a seamless shopping experience with a fully responsive design.",
@@ -167,7 +183,7 @@ export const projects = [
     liveUrl: "https://exclusive-ecommerce-seven.vercel.app",
   },
   {
-    number: "05",
+    number: "06",
     title: "LaslesVPN",
     description:
       "A premium, pixel-perfect landing page for a modern VPN provider. Built using semantic HTML5 and the latest Tailwind CSS v4, featuring a fully responsive mobile-first design, interactive custom animations, structured pricing matrices, and optimized SEO practices.",
